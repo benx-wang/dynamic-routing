@@ -26,4 +26,11 @@ const Post = () => {
   )
 }
 
+export async function getStaticProps() {
+  return {
+    props: {},
+    revalidate: 60
+  }
+}
+
 export default Post
