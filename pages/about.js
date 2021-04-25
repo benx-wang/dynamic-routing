@@ -1,4 +1,6 @@
 import Header from '../components/header'
+let count = 0
+setInterval(() => count++, 1000)
 
 const About = ({count}) => (
   <>
@@ -8,8 +10,7 @@ const About = ({count}) => (
 )
 
 export async function getStaticProps() {
-  let count = 0
-  setInterval(() => count++, 1000)
+
   return {
     props: {count},
     revalidate: 60
