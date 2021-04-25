@@ -1,15 +1,17 @@
 import Header from '../components/header'
 
-const About = () => (
+const About = ({count}) => (
   <>
     <Header />
-    <h1>About page</h1>
+    <h1>About page {count}</h1>
   </>
 )
 
 export async function getStaticProps() {
+  let count = 0
+  setInterval(() => count++, 1000)
   return {
-    props: {},
+    props: {count},
     revalidate: 60
   }
 }
